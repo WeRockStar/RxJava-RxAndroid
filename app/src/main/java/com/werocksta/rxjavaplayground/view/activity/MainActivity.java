@@ -1,5 +1,6 @@
 package com.werocksta.rxjavaplayground.view.activity;
 
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -13,9 +14,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        changeFragment(new MainFragment());
+    }
+
+
+    public void changeFragment(Fragment fragment) {
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.contentContainerFragment, new MainFragment())
+                .replace(R.id.contentContainerFragment, fragment)
+                .addToBackStack(null)
                 .commit();
     }
 }
+
