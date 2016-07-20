@@ -3,9 +3,6 @@ package com.werocksta.rxjavaplayground.presenter;
 import android.util.Log;
 
 import rx.Observable;
-import rx.Subscriber;
-import rx.Subscription;
-import rx.schedulers.Schedulers;
 
 public class BasicPresenter {
 
@@ -20,16 +17,14 @@ public class BasicPresenter {
     }
 
     public void inputText(final String text) {
-        Observable.create(new Observable.OnSubscribe<String>() {
-            @Override
-            public void call(Subscriber<? super String> subscriber) {
-                subscriber.onNext(text);
-                subscriber.onCompleted();
-            }
-        }).subscribe(
-                message -> view.onTextChange(message),
-                throwable -> Log.e("Error", throwable.getMessage()),
-                () -> Log.d("Completed", "Completed")
+        Observable.just(text).subscribe(
+                view::onTextChange,
+                Throwable::printStackTrace,
+                this::displayLogs
         );
+    }
+
+    private int displayLogs() {
+        return Log.d("Completed", "Completed");
     }
 }
