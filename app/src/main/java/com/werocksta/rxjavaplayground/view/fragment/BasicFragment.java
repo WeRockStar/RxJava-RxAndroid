@@ -38,17 +38,12 @@ public class BasicFragment extends Fragment implements BasicPresenter.View {
         tvText = (TextView) view.findViewById(R.id.tvText);
         btnChange = (Button) view.findViewById(R.id.btnChange);
 
-        btnChange.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                presenter.inputText(edtUsername.getText().toString());
-            }
-        });
+        btnChange.setOnClickListener(v -> presenter.inputText(edtUsername.getText().toString()));
     }
 
 
     @Override
     public void onTextChange(String text) {
-        tvText.setText(text);
+        tvText.setText(tvText.getText().toString().concat(text));
     }
 }
