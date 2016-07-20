@@ -1,12 +1,27 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".view.fragment.MainFragment">
 
-    <TextView
+    <Button
+        android:id="@+id/btnBasic"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="@string/button_basic" />
 
-</FrameLayout>
+
+    <Button
+        android:id="@+id/btnZip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_zip" />
+
+    <Button
+        android:id="@+id/btnRetrofit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_retrofit" />
+
+</LinearLayout>
