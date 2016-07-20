@@ -5,6 +5,7 @@ import android.util.Log;
 import rx.Observable;
 import rx.Subscriber;
 import rx.Subscription;
+import rx.schedulers.Schedulers;
 
 public class BasicPresenter {
 
@@ -18,8 +19,8 @@ public class BasicPresenter {
         void onTextChange(String text);
     }
 
-    public Subscription inputText(final String text) {
-        return Observable.create(new Observable.OnSubscribe<String>() {
+    public void inputText(final String text) {
+        Observable.create(new Observable.OnSubscribe<String>() {
             @Override
             public void call(Subscriber<? super String> subscriber) {
                 subscriber.onNext(text);
