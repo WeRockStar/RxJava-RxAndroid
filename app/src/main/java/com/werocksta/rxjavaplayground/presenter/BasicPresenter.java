@@ -2,11 +2,16 @@ package com.werocksta.rxjavaplayground.presenter;
 
 import android.util.Log;
 
+import java.math.BigInteger;
+
 import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
 import rx.Subscription;
 import rx.schedulers.Schedulers;
+
+import static java.math.BigInteger.ONE;
+import static java.math.BigInteger.ZERO;
 
 public class BasicPresenter {
 
@@ -78,12 +83,12 @@ public class BasicPresenter {
         Log.d("Thread", Thread.currentThread().getName() + ": " + msg);
     }
 
-    public void operatorRange() {
+    public void operatorObservableRange() {
         Observable.range(5, 10)
                 .subscribe(this::log);
     }
 
-    public void operatorCreate() {
+    public void operatorObserverbleCreate() {
         Observable.create(new Observable.OnSubscribe<String>() {
             @Override
             public void call(Subscriber<? super String> subscriber) {
@@ -92,9 +97,12 @@ public class BasicPresenter {
                 subscriber.onCompleted();
                 subscriber.unsubscribe();
             }
-        }).cache().subscribeOn(Schedulers.newThread()).subscribe(this::log);
+        }).subscribeOn(Schedulers.newThread()).subscribe(this::log);
     }
 
+    /*
+     Must keep in mind that cache(). Knows as OutOfMemoryError !!
+     */
     public void cache() {
         Observable<String> sampleCache = Observable.create(new Observable.OnSubscribe<String>() {
             @Override
@@ -107,6 +115,22 @@ public class BasicPresenter {
 
         sampleCache.subscribe(i -> Log.d("Cache", i));
         sampleCache.subscribe(i -> Log.d("Cache", i));
+    }
+
+    public void experimentCreate() {
+        // Don't do this!
+        Observable<BigInteger> number = Observable.create(
+                subscriber -> {
+                    Runnable runnable = () -> {
+                        BigInteger i = ZERO;
+                        while (true) {
+                            subscriber.onNext(i);
+                            i = i.add(ONE);
+                        }
+                    };
+                    new Thread(runnable).start();
+                });
+        number.subscribe(n -> Log.d("Number", n + ""));
     }
 
 

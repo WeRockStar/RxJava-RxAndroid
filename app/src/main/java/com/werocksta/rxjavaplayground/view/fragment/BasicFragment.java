@@ -38,9 +38,10 @@ public class BasicFragment extends Fragment implements BasicPresenter.View {
         tvText = (TextView) view.findViewById(R.id.tvText);
         btnChange = (Button) view.findViewById(R.id.btnChange);
 
-        presenter.operatorRange();
-        presenter.operatorCreate();
+        presenter.operatorObservableRange();
+        presenter.operatorObserverbleCreate();
         presenter.cache();
+        // presenter.experimentCreate();
         btnChange.setOnClickListener(v -> presenter.inputText(edtUsername.getText().toString()));
     }
 
