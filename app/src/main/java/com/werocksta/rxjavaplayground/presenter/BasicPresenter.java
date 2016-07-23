@@ -6,6 +6,7 @@ import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
 import rx.Subscription;
+import rx.schedulers.Schedulers;
 
 public class BasicPresenter {
 
@@ -71,5 +72,40 @@ public class BasicPresenter {
                             }
                         }
                 );
+    }
+
+    public void log(Object msg) {
+        Log.d("Thread", Thread.currentThread().getName() + ": " + msg);
+    }
+
+    public void operatorRange() {
+        Observable.range(5, 10)
+                .subscribe(i -> log(i));
+    }
+
+    public void operatorCreate() {
+        Observable.create(new Observable.OnSubscribe<String>() {
+            @Override
+            public void call(Subscriber<? super String> subscriber) {
+                for (int i = 1; i < 10; i++)
+                    subscriber.onNext("create : " + i);
+            }
+        }).subscribeOn(Schedulers.newThread())
+                .subscribe(new Subscriber<String>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onNext(String s) {
+                        log(s);
+                    }
+                });
     }
 }
