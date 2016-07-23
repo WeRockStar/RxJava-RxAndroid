@@ -14,6 +14,7 @@ import com.werocksta.rxjavaplayground.view.activity.MainActivity;
 public class MainFragment extends Fragment {
 
     private Button btnBasic;
+    private Button btnOperator;
     private Button btnZip;
     private Button btnRetrofit;
 
@@ -31,14 +32,11 @@ public class MainFragment extends Fragment {
     private void initialViews(View view) {
         btnBasic = (Button) view.findViewById(R.id.btnBasic);
         btnZip = (Button) view.findViewById(R.id.btnZip);
+        btnOperator = (Button) view.findViewById(R.id.btnOperator);
         btnRetrofit = (Button) view.findViewById(R.id.btnRetrofit);
 
-        btnBasic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((MainActivity) getActivity()).changeFragment(new BasicFragment());
-            }
-        });
+        btnOperator.setOnClickListener(v -> ((MainActivity) getActivity()).changeFragment(new OperatorFragment(), true));
+        btnBasic.setOnClickListener(v -> ((MainActivity) getActivity()).changeFragment(new BasicFragment(), true));
     }
 
 

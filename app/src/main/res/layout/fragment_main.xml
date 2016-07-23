@@ -11,6 +11,12 @@
         android:layout_height="wrap_content"
         android:text="@string/button_basic" />
 
+    <Button
+        android:id="@+id/btnOperator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_operator" />
+
 
     <Button
         android:id="@+id/btnZip"
