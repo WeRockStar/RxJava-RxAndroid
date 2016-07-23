@@ -106,4 +106,24 @@ public class BasicPresenter {
             subscriber.onCompleted();
         });
     }
+
+    public <T> Observable<T> error(T x) {
+        /*
+        .create() in fact you can build all of already discover factory methods on top of other operator ha ha!
+         */
+        return Observable.create(subscriber -> {
+            subscriber.onNext(x);
+            subscriber.onCompleted();
+        });
+    }
+
+    public <T> Observable<String> empty(T x) {
+        /*
+        .create() in fact you can build all of already discover factory methods on top of other operator ha ha!
+         */
+        return Observable.create(subscriber -> {
+            subscriber.onNext("");
+            subscriber.onCompleted();
+        });
+    }
 }
