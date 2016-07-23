@@ -41,6 +41,8 @@ public class BasicFragment extends Fragment implements BasicPresenter.View {
         presenter.operatorObservableRange();
         presenter.operatorObserverbleCreate();
         presenter.cache();
+        // presenter.timer();
+        // presenter.interval();
         // presenter.experimentCreate();
         btnChange.setOnClickListener(v -> presenter.inputText(edtUsername.getText().toString()));
     }

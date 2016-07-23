@@ -3,6 +3,7 @@ package com.werocksta.rxjavaplayground.presenter;
 import android.util.Log;
 
 import java.math.BigInteger;
+import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
 import rx.Observer;
@@ -131,6 +132,16 @@ public class BasicPresenter {
                     new Thread(runnable).start();
                 });
         number.subscribe(n -> Log.d("Number", n + ""));
+    }
+
+    public void timer() {
+        Observable.timer(2, TimeUnit.SECONDS)
+                .subscribe(i -> Log.d("timer", "" + i));
+    }
+
+    public void interval() {
+        Observable.interval(2, TimeUnit.SECONDS)
+                .subscribe(i -> Log.d("interval", "" + i));
     }
 
 
