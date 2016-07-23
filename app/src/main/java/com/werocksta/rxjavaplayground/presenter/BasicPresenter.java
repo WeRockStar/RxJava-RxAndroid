@@ -74,7 +74,7 @@ public class BasicPresenter {
                 );
     }
 
-    public void log(Object msg) {
+    private void log(Object msg) {
         Log.d("Thread", Thread.currentThread().getName() + ": " + msg);
     }
 
@@ -94,5 +94,16 @@ public class BasicPresenter {
             }
         }).subscribeOn(Schedulers.newThread())
                 .subscribe(this::log).unsubscribe();
+    }
+
+
+    public <T> Observable<T> just(T x) {
+        /*
+        .create() in fact you can build all of already discover factory methods on top of other operator ha ha!
+         */
+        return Observable.create(subscriber -> {
+            subscriber.onNext(x);
+            subscriber.onCompleted();
+        });
     }
 }
