@@ -80,7 +80,7 @@ public class BasicPresenter {
 
     public void operatorRange() {
         Observable.range(5, 10)
-                .subscribe(i -> log(i));
+                .subscribe(this::log);
     }
 
     public void operatorCreate() {
@@ -89,23 +89,10 @@ public class BasicPresenter {
             public void call(Subscriber<? super String> subscriber) {
                 for (int i = 1; i < 10; i++)
                     subscriber.onNext("create : " + i);
+                subscriber.onCompleted();
+                subscriber.unsubscribe();
             }
         }).subscribeOn(Schedulers.newThread())
-                .subscribe(new Subscriber<String>() {
-                    @Override
-                    public void onCompleted() {
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onNext(String s) {
-                        log(s);
-                    }
-                });
+                .subscribe(this::log).unsubscribe();
     }
 }
