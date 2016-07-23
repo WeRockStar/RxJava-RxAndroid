@@ -92,8 +92,21 @@ public class BasicPresenter {
                 subscriber.onCompleted();
                 subscriber.unsubscribe();
             }
-        }).subscribeOn(Schedulers.newThread())
-                .subscribe(this::log).unsubscribe();
+        }).cache().subscribeOn(Schedulers.newThread()).subscribe(this::log);
+    }
+
+    public void cache() {
+        Observable<String> sampleCache = Observable.create(new Observable.OnSubscribe<String>() {
+            @Override
+            public void call(Subscriber<? super String> subscriber) {
+                Log.d("Create", "Create");
+                subscriber.onNext("Love");
+                subscriber.onCompleted();
+            }
+        }).cache();
+
+        sampleCache.subscribe(i -> Log.d("Cache", i));
+        sampleCache.subscribe(i -> Log.d("Cache", i));
     }
 
 

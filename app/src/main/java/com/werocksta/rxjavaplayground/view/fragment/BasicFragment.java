@@ -40,6 +40,7 @@ public class BasicFragment extends Fragment implements BasicPresenter.View {
 
         presenter.operatorRange();
         presenter.operatorCreate();
+        presenter.cache();
         btnChange.setOnClickListener(v -> presenter.inputText(edtUsername.getText().toString()));
     }
 
