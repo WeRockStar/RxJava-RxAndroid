@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
         changeFragment(new MainFragment(), false);
     }
 
-
     public void changeFragment(Fragment fragment, boolean addBackStack) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
