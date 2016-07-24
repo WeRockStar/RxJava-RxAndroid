@@ -3,9 +3,13 @@ package com.werocksta.rxjavaplayground.view.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.werocksta.rxjavaplayground.R;
 import com.werocksta.rxjavaplayground.presenter.OperatorPresenter;
@@ -13,6 +17,11 @@ import com.werocksta.rxjavaplayground.presenter.OperatorPresenter;
 public class OperatorFragment extends Fragment implements OperatorPresenter.View {
 
     private OperatorPresenter presenter;
+    private Button btnMap;
+    private Button btnFilter;
+    private Button btnFlatMap;
+    private EditText edtText;
+    private TextView tvResult;
 
     public OperatorFragment() {
     }
@@ -28,10 +37,21 @@ public class OperatorFragment extends Fragment implements OperatorPresenter.View
     }
 
     private void initialView(View view) {
+        tvResult = (TextView) view.findViewById(R.id.tvResult);
+        edtText = (EditText) view.findViewById(R.id.edtText);
+        btnMap = (Button) view.findViewById(R.id.btnMap);
+        btnFlatMap = (Button) view.findViewById(R.id.btnFlatMap);
+        btnFilter = (Button) view.findViewById(R.id.btnFilter);
+
+
+        btnMap.setOnClickListener(v -> presenter.operatorMap(edtText.getText().toString()));
+        btnFilter.setOnClickListener(v -> presenter.operatorFilter(edtText.getText().toString()));
+        btnFlatMap.setOnClickListener(v -> presenter.operatorFlatMap(edtText.getText().toString()));
     }
 
     @Override
     public void onDisplay(String result) {
-
+        Log.d("Result", result);
+        tvResult.setText("Result : " + result);
     }
 }

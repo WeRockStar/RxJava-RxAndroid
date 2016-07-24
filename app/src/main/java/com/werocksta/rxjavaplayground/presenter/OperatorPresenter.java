@@ -1,5 +1,7 @@
 package com.werocksta.rxjavaplayground.presenter;
 
+import rx.Observable;
+
 public class OperatorPresenter {
 
 
@@ -13,15 +15,17 @@ public class OperatorPresenter {
         this.view = view;
     }
 
-    public void operatorMap() {
+    public void operatorMap(String text) {
+        Observable.just(text)
+                .map(m -> m + " -> Map")
+                .subscribe(result -> view.onDisplay(result));
+    }
+
+    public void operatorFlatMap(String text) {
 
     }
 
-    public void operatorFlatMap() {
-
-    }
-
-    public void operatorFilter() {
+    public void operatorFilter(String text) {
 
     }
 }
