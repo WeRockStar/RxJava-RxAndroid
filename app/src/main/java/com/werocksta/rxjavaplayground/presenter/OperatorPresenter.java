@@ -17,7 +17,8 @@ public class OperatorPresenter {
 
     public void operatorMap(String text) {
         Observable.just(text)
-                .map(m -> m + " -> Map")
+                .map(m -> m + " -> Map1")
+                .map(m -> m + " -> Map2")
                 .subscribe(result -> view.onDisplay(result));
     }
 
