@@ -20,6 +20,7 @@ public class OperatorFragment extends Fragment implements OperatorPresenter.View
     private Button btnMap;
     private Button btnFilter;
     private Button btnFlatMap;
+    private Button btnDelay;
     private EditText edtText;
     private TextView tvResult;
 
@@ -41,10 +42,12 @@ public class OperatorFragment extends Fragment implements OperatorPresenter.View
         edtText = (EditText) view.findViewById(R.id.edtText);
         btnMap = (Button) view.findViewById(R.id.btnMap);
         btnFlatMap = (Button) view.findViewById(R.id.btnFlatMap);
+        btnDelay = (Button) view.findViewById(R.id.btnDelay);
         btnFilter = (Button) view.findViewById(R.id.btnFilter);
 
 
         btnMap.setOnClickListener(v -> presenter.operatorMap(edtText.getText().toString()));
+        btnDelay.setOnClickListener(v -> presenter.operatorDelay(edtText.getText().toString()));
         btnFilter.setOnClickListener(v -> presenter.operatorFilter(edtText.getText().toString()));
         btnFlatMap.setOnClickListener(v -> presenter.operatorFlatMap(edtText.getText().toString()));
     }

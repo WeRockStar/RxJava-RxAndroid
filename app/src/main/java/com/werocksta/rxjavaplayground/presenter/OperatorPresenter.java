@@ -2,7 +2,10 @@ package com.werocksta.rxjavaplayground.presenter;
 
 import android.util.Log;
 
+import java.util.concurrent.TimeUnit;
+
 import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
 
 public class OperatorPresenter {
 
@@ -46,6 +49,12 @@ public class OperatorPresenter {
     }
 
     public void operatorDelay(String text) {
-        
+        // delay run in background
+        Observable.just(text)
+                .map(s -> s + " delay")
+                .delay(2, TimeUnit.SECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(result -> view.onDisplay(result),
+                        throwable -> Log.e("Error", throwable.getMessage()));
     }
 }
