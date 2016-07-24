@@ -12,11 +12,16 @@
         android:text="@string/button_basic" />
 
     <Button
-        android:id="@+id/btnOperator"
+        android:id="@+id/btnBasicOperator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_operator" />
+        android:text="@string/button_basic_operator" />
 
+    <Button
+        android:id="@+id/btnCombineOperator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_combine_operator" />
 
     <Button
         android:id="@+id/btnZip"

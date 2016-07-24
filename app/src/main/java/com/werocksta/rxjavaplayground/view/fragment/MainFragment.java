@@ -32,7 +32,7 @@ public class MainFragment extends Fragment {
     private void initialViews(View view) {
         btnBasic = (Button) view.findViewById(R.id.btnBasic);
         btnZip = (Button) view.findViewById(R.id.btnZip);
-        btnOperator = (Button) view.findViewById(R.id.btnOperator);
+        btnOperator = (Button) view.findViewById(R.id.btnBasicOperator);
         btnRetrofit = (Button) view.findViewById(R.id.btnRetrofit);
 
         btnOperator.setOnClickListener(v -> ((MainActivity) getActivity()).changeFragment(new OperatorFragment(), true));
