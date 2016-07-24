@@ -18,6 +18,7 @@ public class OperatorPresenter {
     }
 
     public void operatorMap(String text) {
+        // transform the one item to another
         Observable.just(text)
                 .doOnNext(l -> Log.d("text", l))
                 .map(m -> m + " -> Map1")
@@ -42,5 +43,9 @@ public class OperatorPresenter {
                 .filter(m -> m.contains("filter"))
                 .filter(m -> m.contains("Filter"))
                 .subscribe(result -> view.onDisplay(result));
+    }
+
+    public void operatorDelay(String text) {
+        
     }
 }

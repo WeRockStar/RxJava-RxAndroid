@@ -9,4 +9,5 @@
     <string name="button_map">map</string>
     <string name="button_filter">filter</string>
     <string name="button_flat_map">flat map</string>
+    <string name="button_delay">delay</string>
 </resources>
