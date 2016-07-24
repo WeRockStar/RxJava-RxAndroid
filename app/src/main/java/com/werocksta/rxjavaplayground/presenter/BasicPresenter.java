@@ -6,7 +6,6 @@ import java.math.BigInteger;
 import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
-import rx.Observer;
 import rx.Subscriber;
 import rx.Subscription;
 import rx.schedulers.Schedulers;

@@ -8,19 +8,21 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.werocksta.rxjavaplayground.R;
+import com.werocksta.rxjavaplayground.presenter.OperatorPresenter;
 
-public class OperatorFragment extends Fragment {
+public class OperatorFragment extends Fragment implements OperatorPresenter.View {
 
+    private OperatorPresenter presenter;
 
     public OperatorFragment() {
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_operator, container, false);
 
+        presenter = new OperatorPresenter(this);
         initialView(view);
         return view;
     }
@@ -28,4 +30,8 @@ public class OperatorFragment extends Fragment {
     private void initialView(View view) {
     }
 
+    @Override
+    public void onDisplay(String result) {
+
+    }
 }
