@@ -26,6 +26,9 @@ public class OperatorPresenter {
     }
 
     public void operatorFilter(String text) {
-
+        // return same events but skip some event they did not matching
+        Observable.just(text)
+                .filter(m -> m.contains("filter"))
+                .subscribe(result -> view.onDisplay(result));
     }
 }
