@@ -51,7 +51,6 @@ public class OperatorFragment extends Fragment implements OperatorPresenter.View
 
     @Override
     public void onDisplay(String result) {
-        Log.d("Result", result);
         tvResult.setText("Result : " + result);
     }
 }

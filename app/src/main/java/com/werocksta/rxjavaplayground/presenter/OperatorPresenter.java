@@ -1,5 +1,7 @@
 package com.werocksta.rxjavaplayground.presenter;
 
+import android.util.Log;
+
 import rx.Observable;
 
 public class OperatorPresenter {
@@ -17,14 +19,22 @@ public class OperatorPresenter {
 
     public void operatorMap(String text) {
         Observable.just(text)
+                .doOnNext(l -> Log.d("text", l))
                 .map(m -> m + " -> Map1")
+                .doOnNext(l -> Log.d("text", l))
                 .map(m -> m + " -> Map2")
+                .doOnNext(l -> Log.d("text", l))
                 .subscribe(result -> view.onDisplay(result));
     }
 
     public void operatorFlatMap(String text) {
-
+        // flatMap them return Observable
+        Observable.just(text)
+                .flatMap(f -> (!f.isEmpty()) ? Observable.just(text) : Observable.empty())
+                .flatMap(f -> Observable.just(f + " FlatMap"))
+                .subscribe(result -> view.onDisplay(result));
     }
+
 
     public void operatorFilter(String text) {
         // return same events but skip some event they did not matching
