@@ -24,12 +24,6 @@
         android:text="@string/button_combine_operator" />
 
     <Button
-        android:id="@+id/btnZip"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_zip" />
-
-    <Button
         android:id="@+id/btnRetrofit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

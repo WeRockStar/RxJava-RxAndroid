@@ -15,8 +15,8 @@ public class MainFragment extends Fragment {
 
     private Button btnBasic;
     private Button btnOperator;
-    private Button btnZip;
     private Button btnRetrofit;
+    private Button btnCombine;
 
     public MainFragment() {
     }
@@ -31,12 +31,13 @@ public class MainFragment extends Fragment {
 
     private void initialViews(View view) {
         btnBasic = (Button) view.findViewById(R.id.btnBasic);
-        btnZip = (Button) view.findViewById(R.id.btnZip);
+        btnCombine = (Button) view.findViewById(R.id.btnCombineOperator);
         btnOperator = (Button) view.findViewById(R.id.btnBasicOperator);
         btnRetrofit = (Button) view.findViewById(R.id.btnRetrofit);
 
         btnOperator.setOnClickListener(v -> ((MainActivity) getActivity()).changeFragment(new OperatorFragment(), true));
         btnBasic.setOnClickListener(v -> ((MainActivity) getActivity()).changeFragment(new BasicFragment(), true));
+        btnCombine.setOnClickListener(v -> ((MainActivity) getActivity()).changeFragment(new CombineFragment(), true));
     }
 
 
