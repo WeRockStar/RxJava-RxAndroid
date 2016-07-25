@@ -11,4 +11,6 @@
     <string name="button_flat_map">flat map</string>
     <string name="button_delay">delay</string>
     <string name="button_combine_operator">Combine Operator</string>
+    <string name="merge">merge</string>
+    <string name="zip">zip</string>
 </resources>
