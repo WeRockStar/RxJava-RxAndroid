@@ -5,6 +5,9 @@ import android.util.Log;
 import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 public class CombinePresenter {
 
@@ -19,12 +22,11 @@ public class CombinePresenter {
     }
 
     public void operatorZip() {
-        Observable<Long> red = Observable.interval(10, TimeUnit.MICROSECONDS);
-        Observable<Long> greed = Observable.interval(10, TimeUnit.MICROSECONDS);
+        Observable<String> red = Observable.just("RED");
+        Observable<String> greed = Observable.just("GREEN");
 
-        Observable.zip(red.timestamp(), greed.timestamp(),
-                (r, g) -> r.getTimestampMillis() - g.getTimestampMillis()
-        ).forEach(result -> Log.d("Zip", result.toString()));
+        Observable.zip(red, greed, (r, g) -> r + g)
+                .observeOn(AndroidSchedulers.mainThread()).forEach(aLong -> Log.d("Zip", "Zip : " + aLong));
     }
 
     public void operatorMerge() {
