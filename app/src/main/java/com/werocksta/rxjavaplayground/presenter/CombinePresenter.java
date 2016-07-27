@@ -29,13 +29,13 @@ public class CombinePresenter {
                 .observeOn(AndroidSchedulers.mainThread()).forEach(aLong -> Log.d("Zip", "Zip : " + aLong));
     }
 
-    public void operatorMerge() {
-        Observable<String> red = Observable.just("RED");
-        Observable<String> greed = Observable.just("GREEN");
+    public void operatorMerge(String text1, String text2) {
+        Observable<String> red = Observable.just(text1);
+        Observable<String> greed = Observable.just(text2);
 
         Observable.merge(red, greed)
                 .subscribe(
-                        result -> Log.d("Merge", "Merge : " + result)
+                        result -> view.onDisplay(result)
                 );
     }
 }
