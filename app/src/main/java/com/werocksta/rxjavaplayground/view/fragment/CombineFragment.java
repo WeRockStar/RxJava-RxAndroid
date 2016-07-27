@@ -36,6 +36,7 @@ public class CombineFragment extends Fragment implements CombinePresenter.View {
         btnZip = (Button) view.findViewById(R.id.btnZip);
 
         btnZip.setOnClickListener(v -> presenter.operatorZip());
+        btnMerge.setOnClickListener(v -> presenter.operatorMerge());
     }
 
     @Override

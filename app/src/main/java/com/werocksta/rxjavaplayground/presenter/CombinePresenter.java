@@ -30,6 +30,12 @@ public class CombinePresenter {
     }
 
     public void operatorMerge() {
+        Observable<String> red = Observable.just("RED");
+        Observable<String> greed = Observable.just("GREEN");
 
+        Observable.merge(red, greed)
+                .subscribe(
+                        result -> Log.d("Merge", "Merge : " + result)
+                );
     }
 }
