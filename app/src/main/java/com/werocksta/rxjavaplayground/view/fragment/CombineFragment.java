@@ -20,6 +20,7 @@ public class CombineFragment extends Fragment implements CombinePresenter.View {
     private Button btnMerge;
     private EditText edtText1;
     private EditText edtText2;
+    private Button btnCombineLast;
 
     public CombineFragment() {
     }
@@ -40,10 +41,12 @@ public class CombineFragment extends Fragment implements CombinePresenter.View {
         btnZip = (Button) view.findViewById(R.id.btnZip);
         edtText1 = (EditText) view.findViewById(R.id.edtText1);
         edtText2 = (EditText) view.findViewById(R.id.edtText2);
+        btnCombineLast = (Button) view.findViewById(R.id.btnCombineLast);
 
         btnZip.setOnClickListener(v -> presenter.operatorZip());
         btnMerge.setOnClickListener(v -> presenter.operatorMerge(edtText1.getText().toString(),
                 edtText2.getText().toString()));
+        btnCombineLast.setOnClickListener(v -> presenter.operatorCombineLast());
     }
 
     @Override

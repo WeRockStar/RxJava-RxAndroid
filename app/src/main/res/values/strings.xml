@@ -13,4 +13,5 @@
     <string name="button_combine_operator">Combine Operator</string>
     <string name="merge">merge</string>
     <string name="zip">zip</string>
+    <string name="combineLast">combine last</string>
 </resources>

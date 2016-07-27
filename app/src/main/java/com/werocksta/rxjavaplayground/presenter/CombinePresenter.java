@@ -6,8 +6,6 @@ import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.schedulers.Schedulers;
 
 public class CombinePresenter {
 
@@ -37,5 +35,11 @@ public class CombinePresenter {
                 .subscribe(
                         result -> view.onDisplay(result)
                 );
+    }
+
+    public void operatorCombineLast() {
+        Observable.combineLatest(Observable.just("1", "2", "3", "7", "8", "9"),
+                Observable.just("4", "5", "6", "7", "8", "9"),
+                (s, f) -> s + " : " + f).forEach(System.out::println);
     }
 }
