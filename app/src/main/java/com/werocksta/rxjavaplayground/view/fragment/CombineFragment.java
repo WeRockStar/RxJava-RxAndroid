@@ -46,7 +46,7 @@ public class CombineFragment extends Fragment implements CombinePresenter.View {
         btnZip.setOnClickListener(v -> presenter.operatorZip());
         btnMerge.setOnClickListener(v -> presenter.operatorMerge(edtText1.getText().toString(),
                 edtText2.getText().toString()));
-        btnCombineLast.setOnClickListener(v -> presenter.operatorCombineLast());
+        btnCombineLast.setOnClickListener(v -> presenter.operatorCombineLast2());
     }
 
     @Override

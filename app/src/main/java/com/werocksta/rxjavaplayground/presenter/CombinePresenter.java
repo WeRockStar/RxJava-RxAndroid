@@ -32,14 +32,19 @@ public class CombinePresenter {
         Observable<String> greed = Observable.just(text2);
 
         Observable.merge(red, greed)
-                .subscribe(
-                        result -> view.onDisplay(result)
-                );
+                .subscribe(result -> view.onDisplay(result));
     }
 
     public void operatorCombineLast() {
         Observable.combineLatest(Observable.just("1", "2", "3", "7", "8", "9"),
                 Observable.just("4", "5", "6", "7", "8", "9"),
                 (s, f) -> s + " : " + f).forEach(System.out::println);
+    }
+
+    public void operatorCombineLast2() {
+        Observable<String> red = Observable.just("RED");
+        Observable<String> greed = Observable.just("GREEN");
+        greed.withLatestFrom(red, (r, g) -> r + " : " + g)
+                .forEach(System.out::println);
     }
 }
