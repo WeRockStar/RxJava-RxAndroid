@@ -31,12 +31,12 @@ public class CombineFragment extends Fragment implements CombinePresenter.View {
         View view = inflater.inflate(R.layout.fragment_combine, container, false);
         presenter = new CombinePresenter(this);
 
-        intialViews(view);
+        initialViews(view);
 
         return view;
     }
 
-    private void intialViews(View view) {
+    private void initialViews(View view) {
         btnMerge = (Button) view.findViewById(R.id.btnMerge);
         btnZip = (Button) view.findViewById(R.id.btnZip);
         edtText1 = (EditText) view.findViewById(R.id.edtText1);
