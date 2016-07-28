@@ -17,6 +17,7 @@ public class MainFragment extends Fragment {
     private Button btnOperator;
     private Button btnRetrofit;
     private Button btnCombine;
+    private Button btnCondition;
 
     public MainFragment() {
     }
@@ -34,8 +35,10 @@ public class MainFragment extends Fragment {
         btnCombine = (Button) view.findViewById(R.id.btnCombineOperator);
         btnOperator = (Button) view.findViewById(R.id.btnBasicOperator);
         btnRetrofit = (Button) view.findViewById(R.id.btnRetrofit);
+        btnCondition = (Button) view.findViewById(R.id.btnCondition);
 
         btnOperator.setOnClickListener(v -> ((MainActivity) getActivity()).changeFragment(new OperatorFragment(), true));
+        btnCondition.setOnClickListener(v -> ((MainActivity) getActivity()).changeFragment(new ConditionFragment(), true));
         btnBasic.setOnClickListener(v -> ((MainActivity) getActivity()).changeFragment(new BasicFragment(), true));
         btnCombine.setOnClickListener(v -> ((MainActivity) getActivity()).changeFragment(new CombineFragment(), true));
     }
