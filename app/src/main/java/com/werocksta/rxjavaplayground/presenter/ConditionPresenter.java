@@ -18,7 +18,7 @@ public class ConditionPresenter {
     }
 
     public void conditionAmb() {
-        Observable.amb(programming("PHP"), programming("Java"))
+        Observable.amb(programming("PHP"), programming("Java"), programming("C#"))
                 .subscribe(result -> Log.d("Result", result));
     }
 
