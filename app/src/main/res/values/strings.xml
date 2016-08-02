@@ -16,4 +16,6 @@
     <string name="combineLast">combine last</string>
     <string name="button_condition">Condition</string>
     <string name="amb">amb</string>
+    <string name="takeUtil">takeUtil</string>
+    <string name="takeWhile">takeWhile</string>
 </resources>

@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,4 +10,20 @@
         android:layout_height="wrap_content"
         android:text="@string/amb" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/btnTakeWhile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/btnAmb"
+        android:layout_toRightOf="@id/btnAmb"
+        android:text="@string/takeWhile" />
+
+    <Button
+        android:id="@+id/btnTakeUtil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/btnTakeWhile"
+        android:layout_toRightOf="@id/btnTakeWhile"
+        android:text="@string/takeUtil" />
+
+</RelativeLayout>
