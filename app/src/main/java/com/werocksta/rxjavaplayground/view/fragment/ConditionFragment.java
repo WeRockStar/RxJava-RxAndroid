@@ -37,6 +37,8 @@ public class ConditionFragment extends Fragment implements ConditionPresenter.Vi
         btnTakeWhile = (Button) view.findViewById(R.id.btnTakeWhile);
 
         btnAmb.setOnClickListener(v -> presenter.conditionAmb());
+        btnTakeUtil.setOnClickListener(v -> presenter.conditionTakeUtil());
+        btnTakeWhile.setOnClickListener(v -> presenter.conditionTakeWhile());
     }
 
     @Override

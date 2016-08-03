@@ -22,6 +22,18 @@ public class ConditionPresenter {
                 .subscribe(result -> Log.d("Result", result));
     }
 
+    public void conditionTakeUtil() {
+        Observable.range(1, 10)
+                .takeUntil(x -> x == 5)
+                .subscribe(x -> Log.d("takeUtil", x + ""));
+    }
+
+    public void conditionTakeWhile() {
+        Observable.range(1, 10)
+                .takeWhile(x -> x != 5)
+                .subscribe(x -> Log.d("takeWhile", x + ""));
+    }
+
     Observable<String> programming(String lang) {
         return Observable.just(lang)
                 .map(l -> "Lang: " + l)
