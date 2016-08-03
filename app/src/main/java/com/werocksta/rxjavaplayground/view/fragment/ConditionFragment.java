@@ -14,6 +14,9 @@ import com.werocksta.rxjavaplayground.presenter.ConditionPresenter;
 public class ConditionFragment extends Fragment implements ConditionPresenter.View {
 
     private Button btnAmb;
+    private Button btnTakeWhile;
+    private Button btnTakeUtil;
+
     private ConditionPresenter presenter;
 
     public ConditionFragment() {
@@ -30,6 +33,8 @@ public class ConditionFragment extends Fragment implements ConditionPresenter.Vi
 
     private void initialViews(View view) {
         btnAmb = (Button) view.findViewById(R.id.btnAmb);
+        btnTakeUtil = (Button) view.findViewById(R.id.btnTakeUtil);
+        btnTakeWhile = (Button) view.findViewById(R.id.btnTakeWhile);
 
         btnAmb.setOnClickListener(v -> presenter.conditionAmb());
     }
