@@ -30,6 +30,12 @@
         android:text="@string/button_condition" />
 
     <Button
+        android:id="@+id/btnFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_filter" />
+
+    <Button
         android:id="@+id/btnRetrofit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
