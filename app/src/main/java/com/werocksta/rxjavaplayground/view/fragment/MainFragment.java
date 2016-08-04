@@ -44,6 +44,7 @@ public class MainFragment extends Fragment {
         btnBasic.setOnClickListener(v -> ((MainActivity) getActivity()).changeFragment(new BasicFragment(), true));
         btnCombine.setOnClickListener(v -> ((MainActivity) getActivity()).changeFragment(new CombineFragment(), true));
         btnFilter.setOnClickListener(v -> ((MainActivity) getActivity()).changeFragment(new FilterFragment(), true));
+        btnRetrofit.setOnClickListener(v -> ((MainActivity) getActivity()).changeFragment(new RetrofitFragment(), true));
     }
 
 
