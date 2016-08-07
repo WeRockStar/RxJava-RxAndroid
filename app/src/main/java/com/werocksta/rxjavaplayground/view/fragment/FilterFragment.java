@@ -10,17 +10,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.werocksta.rxjavaplayground.R;
-import com.werocksta.rxjavaplayground.model.User;
 import com.werocksta.rxjavaplayground.presenter.FilterPresenter;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class FilterFragment extends Fragment implements FilterPresenter.View {
 
 
     private Button btnFiler;
     private Button btnDistinct;
+    private Button btnTake;
+    private Button btnSkip;
 
     private FilterPresenter presenter;
 
@@ -37,9 +36,13 @@ public class FilterFragment extends Fragment implements FilterPresenter.View {
 
         btnFiler = (Button) view.findViewById(R.id.btnFilter);
         btnDistinct = (Button) view.findViewById(R.id.btnDistinct);
+        btnSkip = (Button) view.findViewById(R.id.btnSkip);
+        btnTake = (Button) view.findViewById(R.id.btnTake);
 
         btnFiler.setOnClickListener(v -> presenter.filer());
         btnDistinct.setOnClickListener(v -> presenter.distinct());
+        btnTake.setOnClickListener(v -> presenter.take());
+        btnSkip.setOnClickListener(v -> presenter.skip());
         return view;
     }
 
