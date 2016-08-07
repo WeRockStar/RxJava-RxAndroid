@@ -19,4 +19,6 @@
     <string name="takeUtil">takeUtil</string>
     <string name="takeWhile">takeWhile</string>
     <string name="button_distinct">distinct</string>
+    <string name="button_take">take</string>
+    <string name="button_skip">skip</string>
 </resources>

@@ -25,4 +25,18 @@ public class FilterPresenter {
                 .take(3)
                 .subscribe(u -> view.displayResult(u));
     }
+
+    public void take() {
+        Observable.range(1, 9)
+                .take(3)
+                .subscribe(u -> view.displayResult(u));
+    }
+
+    public void skip() {
+        Observable.range(1, 9)
+                .skip(3)
+                .subscribe(u -> view.displayResult(u));
+    }
+
+
 }

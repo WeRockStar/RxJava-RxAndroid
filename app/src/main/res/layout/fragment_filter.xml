@@ -18,4 +18,20 @@
         android:layout_toRightOf="@id/btnFilter"
         android:text="@string/button_distinct" />
 
+    <Button
+        android:id="@+id/btnTake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/btnDistinct"
+        android:layout_toRightOf="@id/btnDistinct"
+        android:text="@string/button_take" />
+
+    <Button
+        android:id="@+id/btnSkip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/btnTake"
+        android:layout_toRightOf="@id/btnTake"
+        android:text="@string/button_skip" />
+
 </RelativeLayout>
