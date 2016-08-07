@@ -20,9 +20,8 @@ public class FilterPresenter {
     }
 
     public void distinct() {
-        Observable.range(1, 9)
+        Observable.just(1, 9, 2, 3, 4, 1, 1, 2, 3)
                 .distinct()
-                .take(3)
                 .subscribe(u -> view.displayResult(u));
     }
 

@@ -50,6 +50,4 @@ public class FilterFragment extends Fragment implements FilterPresenter.View {
     public void displayResult(int result) {
         Log.d("Result", result + "");
     }
-
-
 }
