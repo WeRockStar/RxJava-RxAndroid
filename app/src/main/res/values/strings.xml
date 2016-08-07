@@ -18,4 +18,5 @@
     <string name="amb">amb</string>
     <string name="takeUtil">takeUtil</string>
     <string name="takeWhile">takeWhile</string>
+    <string name="button_distinct">distinct</string>
 </resources>

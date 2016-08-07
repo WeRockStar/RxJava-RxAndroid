@@ -14,8 +14,15 @@ public class FilterPresenter {
         void displayResult(int result);
     }
 
-    public void filer(int[] numbers) {
+    public void filer() {
         Observable.range(1, 6)
                 .filter(n -> n % 2 == 0).subscribe(result -> view.displayResult(result));
+    }
+
+    public void distinct() {
+        Observable.range(1, 9)
+                .distinct()
+                .take(3)
+                .subscribe(u -> view.displayResult(u));
     }
 }
