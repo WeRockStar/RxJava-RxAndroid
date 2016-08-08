@@ -49,5 +49,17 @@ public class FilterPresenter {
                 .subscribe(u -> view.displayResult(u));
     }
 
+    public void first() {
+        Observable.range(1, 9)
+                .first()
+                .subscribe(u -> view.displayResult(u));
+    }
+
+    public void last() {
+        Observable.range(1, 9)
+                .last()
+                .subscribe(u -> view.displayResult(u));
+    }
+
 
 }

@@ -23,4 +23,6 @@
     <string name="button_skip">skip</string>
     <string name="button_take_last">takeLast</string>
     <string name="button_skip_last">skipLast</string>
+    <string name="button_last">Last</string>
+    <string name="button_first">First</string>
 </resources>

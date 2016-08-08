@@ -49,4 +49,20 @@
         android:layout_toRightOf="@id/btnTakeLast"
         android:text="@string/button_skip_last" />
 
+    <Button
+        android:id="@+id/btnLast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSkip"
+        android:layout_toRightOf="@id/btnSkipLast"
+        android:text="@string/button_last" />
+
+    <Button
+        android:id="@+id/btnFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSkip"
+        android:layout_toRightOf="@id/btnLast"
+        android:text="@string/button_first" />
+
 </RelativeLayout>
