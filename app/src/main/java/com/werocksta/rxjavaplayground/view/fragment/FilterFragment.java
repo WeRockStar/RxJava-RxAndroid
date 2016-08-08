@@ -48,7 +48,7 @@ public class FilterFragment extends Fragment implements FilterPresenter.View {
         btnTake.setOnClickListener(v -> presenter.take());
         btnSkip.setOnClickListener(v -> presenter.skip());
         btnTakeLast.setOnClickListener(v -> presenter.takeLast());
-        btnSkipLast.setOnClickListener(v -> presenter.skipLast()`);
+        btnSkipLast.setOnClickListener(v -> presenter.skipLast());
         return view;
     }
 
