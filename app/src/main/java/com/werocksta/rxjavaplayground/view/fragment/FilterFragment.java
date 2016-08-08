@@ -20,6 +20,7 @@ public class FilterFragment extends Fragment implements FilterPresenter.View {
     private Button btnDistinct;
     private Button btnTake;
     private Button btnSkip;
+    private Button btnTakeLast;
 
     private FilterPresenter presenter;
 
@@ -38,11 +39,13 @@ public class FilterFragment extends Fragment implements FilterPresenter.View {
         btnDistinct = (Button) view.findViewById(R.id.btnDistinct);
         btnSkip = (Button) view.findViewById(R.id.btnSkip);
         btnTake = (Button) view.findViewById(R.id.btnTake);
+        btnTakeLast = (Button) view.findViewById(R.id.btnTakeLast);
 
         btnFiler.setOnClickListener(v -> presenter.filer());
         btnDistinct.setOnClickListener(v -> presenter.distinct());
         btnTake.setOnClickListener(v -> presenter.take());
         btnSkip.setOnClickListener(v -> presenter.skip());
+        btnTakeLast.setOnClickListener(v -> presenter.takeLast());
         return view;
     }
 

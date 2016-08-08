@@ -34,4 +34,11 @@
         android:layout_toRightOf="@id/btnTake"
         android:text="@string/button_skip" />
 
+    <Button
+        android:id="@+id/btnTakeLast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSkip"
+        android:text="@string/button_take_last" />
+
 </RelativeLayout>
