@@ -22,4 +22,5 @@
     <string name="button_take">take</string>
     <string name="button_skip">skip</string>
     <string name="button_take_last">takeLast</string>
+    <string name="button_skip_last">skipLast</string>
 </resources>
