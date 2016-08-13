@@ -36,6 +36,12 @@
         android:text="@string/button_filter" />
 
     <Button
+        android:id="@+id/btnConcurrency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/concurrency" />
+
+    <Button
         android:id="@+id/btnRetrofit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

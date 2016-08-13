@@ -19,6 +19,7 @@ public class MainFragment extends Fragment {
     private Button btnCombine;
     private Button btnCondition;
     private Button btnFilter;
+    private Button btnConcurrency;
 
     public MainFragment() {
     }
@@ -38,6 +39,7 @@ public class MainFragment extends Fragment {
         btnRetrofit = (Button) view.findViewById(R.id.btnRetrofit);
         btnCondition = (Button) view.findViewById(R.id.btnCondition);
         btnFilter = (Button) view.findViewById(R.id.btnFilter);
+        btnConcurrency = (Button) view.findViewById(R.id.btnConcurrency);
 
         btnOperator.setOnClickListener(v -> ((MainActivity) getActivity()).changeFragment(new OperatorFragment(), true));
         btnCondition.setOnClickListener(v -> ((MainActivity) getActivity()).changeFragment(new ConditionFragment(), true));
