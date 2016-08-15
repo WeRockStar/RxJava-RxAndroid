@@ -22,49 +22,55 @@ public class FilterPresenter {
     public void distinct() {
         Observable.just(1, 9, 2, 3, 4, 1, 1, 2, 3)
                 .distinct()
-                .subscribe(u -> view.displayResult(u));
+                .subscribe(n -> view.displayResult(n));
     }
 
     public void take() {
         Observable.range(1, 9)
                 .take(3)
-                .subscribe(u -> view.displayResult(u));
+                .subscribe(n -> view.displayResult(n));
     }
 
     public void skip() {
         Observable.range(1, 9)
                 .skip(3)
-                .subscribe(u -> view.displayResult(u));
+                .subscribe(n -> view.displayResult(n));
     }
 
     public void takeLast() {
         Observable.range(1, 9)
                 .takeLast(3)
-                .subscribe(u -> view.displayResult(u));
+                .subscribe(n -> view.displayResult(n));
     }
 
     public void skipLast() {
         Observable.range(1, 9)
                 .skipLast(3)
-                .subscribe(u -> view.displayResult(u));
+                .subscribe(n -> view.displayResult(n));
     }
 
     public void first() {
         Observable.range(1, 9)
                 .first()
-                .subscribe(u -> view.displayResult(u));
+                .subscribe(n -> view.displayResult(n));
     }
 
     public void last() {
         Observable.range(1, 9)
                 .last()
-                .subscribe(u -> view.displayResult(u));
+                .subscribe(n -> view.displayResult(n));
     }
 
     public void firstOrDefault() {
         Observable.range(1, 9)
                 .firstOrDefault(0)
-                .subscribe(u -> view.displayResult(u));
+                .subscribe(n -> view.displayResult(n));
+    }
+
+    public void elementAt() {
+        Observable.range(1, 9)
+                .elementAt(3)
+                .subscribe(n -> view.displayResult(n));
     }
 
 }

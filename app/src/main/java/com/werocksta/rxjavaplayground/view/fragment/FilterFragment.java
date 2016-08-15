@@ -25,6 +25,7 @@ public class FilterFragment extends Fragment implements FilterPresenter.View {
     private Button btnFirst;
     private Button btnLast;
     private Button btnFirstOrDefault;
+    private Button btnElementAt;
 
     private FilterPresenter presenter;
 
@@ -48,6 +49,7 @@ public class FilterFragment extends Fragment implements FilterPresenter.View {
         btnLast = (Button) view.findViewById(R.id.btnLast);
         btnFirst = (Button) view.findViewById(R.id.btnFirst);
         btnFirstOrDefault = (Button) view.findViewById(R.id.btnFirstOrDefault);
+        btnElementAt = (Button) view.findViewById(R.id.btnElement);
 
         btnFiler.setOnClickListener(v -> presenter.filer());
         btnDistinct.setOnClickListener(v -> presenter.distinct());
@@ -58,6 +60,7 @@ public class FilterFragment extends Fragment implements FilterPresenter.View {
         btnFirst.setOnClickListener(v -> presenter.first());
         btnLast.setOnClickListener(v -> presenter.last());
         btnFirstOrDefault.setOnClickListener(v -> presenter.firstOrDefault());
+        btnElementAt.setOnClickListener(v -> presenter.elementAt());
         return view;
     }
 
