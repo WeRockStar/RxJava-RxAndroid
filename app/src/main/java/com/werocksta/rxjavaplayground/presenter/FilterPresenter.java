@@ -61,5 +61,10 @@ public class FilterPresenter {
                 .subscribe(u -> view.displayResult(u));
     }
 
+    public void firstOrDefault() {
+        Observable.range(1, 9)
+                .firstOrDefault(0)
+                .subscribe(u -> view.displayResult(u));
+    }
 
 }

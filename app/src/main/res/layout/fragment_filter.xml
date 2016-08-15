@@ -65,4 +65,11 @@
         android:layout_toRightOf="@id/btnLast"
         android:text="@string/button_first" />
 
+    <Button
+        android:id="@+id/btnFirstOrDefault"
+        android:layout_below="@id/btnFirst"
+        android:text="@string/firstOrDefault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </RelativeLayout>
