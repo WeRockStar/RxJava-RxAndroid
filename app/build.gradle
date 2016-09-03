@@ -2,6 +2,14 @@ apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
 
 android {
+    signingConfigs {
+        rx_app {
+            keyAlias 'Kotchaphan Muangsan'
+            keyPassword '091300'
+            storeFile file('/Users/WeRockStar/Desktop/Android/RxJavaPlayground/app_rx_test.jks')
+            storePassword '091300'
+        }
+    }
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
     defaultConfig {
@@ -17,6 +25,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.rx_app
         }
     }
     compileOptions {
